@@ -34,7 +34,7 @@ local ground = love.graphics.newImage('ground.png')
 local groundScroll = 0
 
 -- speed at which we should scroll our images, scaled by dt
-local BACKGROUND_SCROLL_SPEED = 30
+local BACKGROUND_SCROLL_SPEED = 30 
 local GROUND_SCROLL_SPEED = 60
 
 -- point at which we should loop our background back to X 0
@@ -67,8 +67,7 @@ end
 
 function love.update(dt)
     -- scroll background by preset speed * dt, looping back to 0 after the looping point
-    backgroundScroll = (backgroundScroll + BACKGROUND_SCROLL_SPEED * dt) 
-        % BACKGROUND_LOOPING_POINT
+    backgroundScroll = (backgroundScroll + BACKGROUND_SCROLL_SPEED * dt) % BACKGROUND_LOOPING_POINT
 
     -- scroll ground by preset speed * dt, looping back to 0 after the screen width passes
     groundScroll = (groundScroll + GROUND_SCROLL_SPEED * dt) 
@@ -89,6 +88,8 @@ function love.draw()
     -- draw the ground on top of the background, toward the bottom of the screen,
     -- at its negative looping point
     love.graphics.draw(ground, -groundScroll, VIRTUAL_HEIGHT - 16)
-    
+   
+    love.graphics.printf(backgroundScroll, VIRTUAL_WIDTH / 2, 20, VIRTUAL_WIDTH, 'center');
+
     push:finish()
 end
