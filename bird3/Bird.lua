@@ -10,7 +10,7 @@
 
 Bird = Class{}
 
-local GRAVITY = 20
+local GRAVITY = 9.8
 
 function Bird:init()
     -- load bird image from disk and assign its width and height

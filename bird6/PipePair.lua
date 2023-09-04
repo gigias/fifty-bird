@@ -43,6 +43,9 @@ function PipePair:update(dt)
 end
 
 function PipePair:render()
+    -- Only for debug
+    -- love.graphics.print(tostring(self.pipes['upper'].y), 100, 80)
+    -- love.graphics.print(tostring(self.pipes['lower'].y), 100, 100)
     for k, pipe in pairs(self.pipes) do
         pipe:render()
     end
