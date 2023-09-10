@@ -42,7 +42,8 @@ function StateMachine:init(states)
 		exit = function() end
 	}
 	self.states = states or {} -- [name] -> [function that returns states]
-	self.current = self.empty
+	-- self.current = self.empty
+	self.current = BaseState()
 end
 
 function StateMachine:change(stateName, enterParams)
